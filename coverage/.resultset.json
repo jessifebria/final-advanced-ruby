@@ -1,0 +1,29 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/jessi/advanced_final/spec/test.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/jessi/advanced_final/spec/hello.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1612805342
+  }
+}
