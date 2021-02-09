@@ -21,7 +21,10 @@ def input_command(commands)
         return library.build
 
     elsif command == "put_book"
-        if value.length != 3
+        if value.length != 3 
+            return "Invalid Value!"
+        end
+        if (value[0].to_i.to_s != value[0]) or (value[2].to_i.to_s == value[2]) 
             return "Invalid Value!"
         end
         return value
@@ -31,7 +34,7 @@ def input_command(commands)
 end
 
 
-a = "|||"
-b = a.split("|")
+# a = "|||"
+# b = a.split("|")
 
-puts(b.length)
+# puts(b.length)

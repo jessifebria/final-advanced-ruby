@@ -54,6 +54,13 @@
           1,
           1,
           null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -64,10 +71,10 @@
           1,
           null,
           1,
-          10,
-          10,
-          10,
-          10,
+          12,
+          12,
+          12,
+          12,
           8,
           3,
           null,
@@ -83,9 +90,12 @@
           3,
           3,
           null,
-          2,
-          2,
+          4,
+          4,
           1,
+          null,
+          3,
+          2,
           null,
           1,
           null,
@@ -94,10 +104,10 @@
           null,
           null,
           null,
-          1,
-          1,
           null,
-          1
+          null,
+          null,
+          null
         ]
       },
       "/home/jessi/advanced_final/library.rb": {
@@ -124,6 +134,6 @@
         ]
       }
     },
-    "timestamp": 1612859008
+    "timestamp": 1612860035
   }
 }
