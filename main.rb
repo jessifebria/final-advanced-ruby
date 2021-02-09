@@ -19,6 +19,9 @@ def input_command(commands)
         end
         library = Library.new(value)
         return library.build
+
+    elsif command == "put_book"
+        return value
     else
         return "Invalid Command!"
     end

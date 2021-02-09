@@ -40,4 +40,11 @@ describe "Main" do
             expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added")
         end
     end 
+    context "put_book" do
+        it "split put_book|9780747532743|Harry Potter 1|J. K. Rowling return [9780747532743,Harry Potter 1,J. K. Rowling]" do
+            response = input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")    
+            expect(response).to eq(["9780747532743","Harry Potter 1","J. K. Rowling"])
+        end
+        
+    end
 end
