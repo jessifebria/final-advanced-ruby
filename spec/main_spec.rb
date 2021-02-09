@@ -6,6 +6,5 @@ describe "Main" do
             response = input_command("build_library|2|1|3")
             expect(response).to eq([2,1,3])
         end
-      
     end 
 end

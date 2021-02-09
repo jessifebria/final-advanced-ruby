@@ -1,6 +1,9 @@
 require_relative 'library'
 
 def input_command(command)
-    library = Library.new(2,1,3)
-    return library.build
+    command_arr = command.split("|")
+    if command_arr[0] == "build_library"
+        return command_arr.slice(1,3).map(&:to_i)
+    end
+    return null
 end
