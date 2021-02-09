@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/jessi/advanced_final/spec/test.rb": {
+      "/home/jessi/advanced_final/spec/main_spec.rb": {
         "lines": [
           1,
           null,
@@ -10,20 +10,73 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/home/jessi/advanced_final/spec/hello.rb": {
+      "/home/jessi/advanced_final/main.rb": {
         "lines": [
           1,
+          null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          5,
+          3,
+          null,
+          2,
+          4,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
           1,
           1,
+          null,
+          1
+        ]
+      },
+      "/home/jessi/advanced_final/library.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1612805342
+    "timestamp": 1612853722
   }
 }
