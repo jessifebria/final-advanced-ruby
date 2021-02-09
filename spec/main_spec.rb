@@ -41,10 +41,10 @@ describe "Main" do
         end
     end 
     context "put_book" do
-        it "split put_book|9780747532743|Harry Potter 1|J. K. Rowling return [9780747532743,Harry Potter 1,J. K. Rowling]" do
-            response = input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")    
-            expect(response).to eq(["9780747532743","Harry Potter 1","J. K. Rowling"])
-        end
+        # it "split put_book|9780747532743|Harry Potter 1|J. K. Rowling return [9780747532743,Harry Potter 1,J. K. Rowling]" do
+        #     response = input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")    
+        #     expect(response).to eq(["9780747532743","Harry Potter 1","J. K. Rowling"])
+        # end
         it "split put_book||| return Invalid Value!" do
             response = input_command("put_book|||")    
             expect(response).to eq("Invalid Value!")
@@ -56,6 +56,11 @@ describe "Main" do
         it "split put_book|abc|Harry Potter 1|J. K. Rowling return Invalid Value!" do
             response = input_command("put_book|abc|Harry Potter 1|J. K. Rowling")
             expect(response).to eq("Invalid Value!")
+        end
+        it "split put_book|9780747532743|Harry Potter 1|J. K. Rowling return Allocated address: 010101" do
+            build = input_command("build_library|2|1|3")
+            response = input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")
+            expect(response).to eq("Allocated address: 010101")
         end
     end
 end

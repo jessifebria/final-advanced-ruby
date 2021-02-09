@@ -1,5 +1,7 @@
 require_relative 'library'
 
+$library
+
 def input_command(commands)
     commands_arr = commands.split("|")
     command = commands_arr[0]
@@ -17,8 +19,8 @@ def input_command(commands)
         if value[0]<1
             return "No Shelf added"
         end
-        library = Library.new(value)
-        return library.build
+        $library = Library.new(value)
+        return $library.build
 
     elsif command == "put_book"
         if value.length != 3 
@@ -27,7 +29,8 @@ def input_command(commands)
         if (value[0].to_i.to_s != value[0]) or (value[2].to_i.to_s == value[2]) 
             return "Invalid Value!"
         end
-        return value
+        
+        return $library.put_book(value)
     else
         return "Invalid Command!"
     end
