@@ -13,9 +13,15 @@ def input_command(commands)
                 return "Invalid Value, It must be an integer!"
             end
         end
-        return value.map(&:to_i)
+        value = value.map(&:to_i) 
+        if value[0]<1
+            return "No Shelf added"
+        end
+        library = Library.new(value)
+        return library.build
+    else
+        return "Invalid Command!"
     end
-    return null
 end
 
 
