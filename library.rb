@@ -9,6 +9,11 @@ class Library
     end
 
     def build
-        return "Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added"
+        message = "Shelf 1 with #{@x} rows and #{y} columns is added"
+        for i in 2..n do
+            message += "\nShelf #{i} with #{@x} rows and #{y} columns is added"
+        end
+        
+        return message
     end
 end

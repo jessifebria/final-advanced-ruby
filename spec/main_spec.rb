@@ -30,5 +30,14 @@ describe "Main" do
             response = input_command("build_library|0|1|3")
             expect(response).to eq("No Shelf added")
         end
+        it "split build_library|4|1|3 command return Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added\nShelf 3 with 1 rows and 3 columns is added\nShelf 4 with 1 rows and 3 columns is added" do
+            response = input_command("build_library|4|1|3")
+            expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added\nShelf 3 with 1 rows and 3 columns is added\nShelf 4 with 1 rows and 3 columns is added")
+        end
+        
+        it "split build_library|1|1|3 command return Shelf 1 with 1 rows and 3 columns is added" do
+            response = input_command("build_library|1|1|3")
+            expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added")
+        end
     end 
 end
