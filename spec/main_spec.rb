@@ -45,6 +45,10 @@ describe "Main" do
             response = input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")    
             expect(response).to eq(["9780747532743","Harry Potter 1","J. K. Rowling"])
         end
+        it "split put_book||| return Invalid Value!" do
+            response = input_command("put_book|||")    
+            expect(response).to eq("Invalid Value!")
+        end
         
     end
 end

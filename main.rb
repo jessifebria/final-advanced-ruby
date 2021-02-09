@@ -21,6 +21,9 @@ def input_command(commands)
         return library.build
 
     elsif command == "put_book"
+        if value.length != 3
+            return "Invalid Value!"
+        end
         return value
     else
         return "Invalid Command!"
