@@ -1,4 +1,5 @@
 require_relative 'library'
+require_relative 'book'
 
 $library
 class Main
@@ -48,9 +49,9 @@ class Main
             if !(num?(isbn)) or (num?(author)) 
                 return "Invalid Value!"
             end
-    
-            return $library.put_book([isbn, title, author])
-    
+            book = Book.new(isbn,title,author)
+
+            return $library.put_book(book)
         else
             return "Invalid Command!"
         end

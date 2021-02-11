@@ -30,7 +30,7 @@ class Library
                 column_index = rows.index("0")
                 if column_index != nil 
                     flag = 1
-                    @shelters[shelter_index][row_index][column_index] = "aa"
+                    @shelters[shelter_index][row_index][column_index] = book
                     break
                 end
                 row_index+=1
