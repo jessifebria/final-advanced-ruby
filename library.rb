@@ -30,6 +30,7 @@ class Library
     def take_book(shelter_index, row_index, column_index)
         if @shelters[shelter_index][row_index][column_index] == "0"
             return "Slot #{shelter_index+1}. "
+        end
     end
 
 
