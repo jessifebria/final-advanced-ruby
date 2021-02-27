@@ -33,6 +33,12 @@ class Library
         end
     end
 
+    def is_index_exceed? (shelter_index, row_index, column_index)
+        if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
+            return true
+        end
+        return false
+    end
 
     private def createshelter
         Array.new(@n) {Array.new(@x) {Array.new(@y){"0"}}}
