@@ -23,24 +23,7 @@ class Main
         return command, params
     end
     
-    private def execute_command(command,params)
-        if command == "put_book"
-            if params.length != 3 
-                return "Invalid Value!"
-            end
-            isbn = params[0]
-            title = params[1]
-            author = params[2]
-            if !(num?(isbn)) or (num?(author)) 
-                return "Invalid Value!"
-            end
-            book = Book.new(isbn,title,author)
 
-            return $library.put_book(book)
-        else
-            return "Invalid Command!"
-        end
-    end
 end
 
 

@@ -5,7 +5,7 @@ describe "Main" do
         @main = Main.new
         # @user_2 = User.create email: 'bar@ombulabs.com', username: 'barbar'
     end
-    context "build_library" do
+    context "input_command build_library" do
         it "split build_library|a|b|4 command return Invalid Value, It must be an integer!" do
             response = @main.input_command("build_library|a|b|4")
             expect(response).to eq("Invalid Value, It must be an integer!")
@@ -40,7 +40,7 @@ describe "Main" do
             expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added")
         end
     end 
-    context "put_book" do
+    context "input_command put_book" do
         it "split put_book||| return Invalid Value!" do
             response =  @main.input_command("put_book|||")    
             expect(response).to eq("Invalid Value!")
