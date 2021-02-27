@@ -20,6 +20,11 @@ class Build < Command
     end
 
     def execute(params)
+        message = validate(params)
+        if message != "valid"
+            return message 
+        end 
+
         params = params.map(&:to_i) 
         n = params[0]
         x = params[1]

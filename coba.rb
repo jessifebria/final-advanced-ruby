@@ -61,3 +61,15 @@ puts e
 f = Library.instance
 
 puts f
+
+d = Library.createinstance([4,5,3])
+
+puts d
+
+e = Library.instance
+
+puts e
+
+f = Library.instance
+
+puts f

@@ -12,9 +12,11 @@ class Library
     end
 
     def self.createinstance(arr)
-        @n = arr[0]
-        @x = arr[1]
-        @y = arr[2]
+        if @n==nil or @x==nil or @y==nil
+            @n = arr[0]
+            @x = arr[1]
+            @y = arr[2]
+        end
     end
 
     def self.instance
@@ -23,15 +25,7 @@ class Library
 
     private_class_method :new
 
-    # def build
-    #     @shelters = Array.new(n) {Array.new(x) {Array.new(y){"0"}}}
-    #     # puts "#{@shelters}, #{x}, #{y}"
-    #     message = "Shelf 1 with #{@x} rows and #{y} columns is added"
-    #     for i in 2..n do
-    #         message += "\nShelf #{i} with #{@x} rows and #{y} columns is added"
-    #     end
-    #     return message
-    # end
+    
 
     def put_book(book)
         # puts "#{@shelters}"
