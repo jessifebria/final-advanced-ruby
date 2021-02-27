@@ -1,4 +1,4 @@
-require 'index_to_booklocation_adapter'
+require_relative 'index_to_booklocation_adapter'
 
 class Library
     attr_accessor :shelters
@@ -30,7 +30,7 @@ class Library
     end
 
     def take_book(shelter_index, row_index, column_index)
-        book_location = ToBookLocationAdapter.convert(shelter_index, row_index, column_index)
+        book_location = @ToBookLocationAdapter.convert(shelter_index, row_index, column_index)
         if @shelters[shelter_index][row_index][column_index] == "0"
             return "Slot #{book_location} is empty from the start!"
         else

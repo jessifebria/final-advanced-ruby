@@ -17,7 +17,7 @@ class TakeBook < Command
         @shelter_index, @row_index, @column_index = adapter.convert(@book_location)
 
         @library = Library.instance
-        
+
         if @library.is_index_exceed?(@shelter_index,@row_index,@column_index)
             return "You exceed limit capacity!"
         end
@@ -31,7 +31,7 @@ class TakeBook < Command
             return message
         end
 
-        message = library.take_book(shelter_index, row_index, column_index)
+        message = @library.take_book(@shelter_index, @row_index, @column_index)
         return message
     end
 end

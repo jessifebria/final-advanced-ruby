@@ -34,6 +34,7 @@ describe "Take Book" do
             response = @takebook.validate(["-11238"])
             expect(response).to eq("Invalid Value!")
         end
+        
         it "give exceeding value of takebook return You exceed limit capacity!" do
             build_library
             put_book
@@ -64,8 +65,25 @@ describe "Take Book" do
             put_book3
             put_book4
             put_book5
-            response = @takebook.execute("020102")
+            response = @takebook.execute(["020102"])
             expect(response).to eq("Slot 020102 is free")
+        end
+        it "take_book_from|010102 return slot 010102 is free" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            response = @takebook.execute(["010102"])
+            expect(response).to eq("Slot 010102 is free")
+        end
+        it "take_book_from|020102 return slot 020102 is empty from the start" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            response = @takebook.execute(["020102"])
+            expect(response).to eq("Slot 020102 is empty from the start!")
         end
     end 
 
