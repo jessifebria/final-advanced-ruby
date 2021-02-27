@@ -34,6 +34,14 @@ describe "Take Book" do
             response = @takebook.validate([-11238])
             expect(response).to eq("Invalid Value!")
         end
+        it "give exceeding value of takebook return You exceed limit capacity!" do
+            response = @takebook.validate([030401])
+            expect(response).to eq("You exceed limit capacity!")
+        end
+        it "give one integer param, length ==6 and <99 return valid" do
+            response = @takebook.validate([112223])
+            expect(response).to eq("valid")
+        end
     end 
 
     # context "execute" do

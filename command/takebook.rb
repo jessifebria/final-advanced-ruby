@@ -7,7 +7,7 @@ class TakeBook < Command
 
     
     def validate(params)
-        if (params.length != 1) or (num?(params[0]) == false) or (params[0].length!=6) or params[0].to_i<1
+        if (params.length != 1) or (num?(params[0].to_s) == false) or (params[0].to_s.length!=6) or params[0].to_i<1
             return "Invalid Value!"
         end
 
