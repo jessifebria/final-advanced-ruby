@@ -47,8 +47,6 @@ require './command/build'
 # a = Main.new
 # a.parse_command("aa")
 
-c = Build.new
-puts c.validate("a")
 
 d = Library.createinstance([1,2,3])
 
@@ -73,3 +71,7 @@ puts e
 f = Library.instance
 
 puts f
+
+puts f.shelters
+
+# g = Library.new(2,1,3)

@@ -1,9 +1,9 @@
 require './main'
-
 describe "Main" do
 
     before do
         @main = Main.new
+        Library.reset
     end
     let (:build_library) {@main.input_command("build_library|2|1|3")}
     let (:put_book) {@main.input_command("put_book|9780747532743|Harry Potter 1|J. K. Rowling")}
@@ -44,7 +44,7 @@ describe "Main" do
         end
         
         it "split build_library|1|1|3 command return Shelf 1 with 1 rows and 3 columns is added" do
-            response =  @main.input_command("build_library|1|1|3")
+            response = Main.new.input_command("build_library|1|1|3")
             expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added")
         end
     end 

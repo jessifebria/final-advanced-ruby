@@ -2,14 +2,24 @@
 class Library
     attr_accessor :shelters
 
-    @shelters 
-    @@instance = Library.new()
+    @@instance = nil
+
+    def initialize(n,x,y)
+        @n = n
+        @x = x
+        @y = y
+        @shelters = createshelter
+    end
+
+    def self.reset
+        @@instance = nil
+        public_class_method :new
+    end
 
     def self.createinstance(arr)
-        if @n==nil or @x==nil or @y==nil
-            @n = arr[0]
-            @x = arr[1]
-            @y = arr[2]
+        if @@instance == nil
+            @@instance = Library.new(arr[0], arr[1], arr[2])
+            private_class_method :new
         end
     end
 
@@ -17,6 +27,10 @@ class Library
         @@instance 
     end
 
-    private_class_method :new
+    private def createshelter
+        Array.new(@n) {Array.new(@x) {Array.new(@y){"0"}}}
+    end
+
+    
 
 end
