@@ -1,3 +1,4 @@
+require 'index_to_booklocation_adapter'
 
 class Library
     attr_accessor :shelters
@@ -9,6 +10,7 @@ class Library
         @x = x
         @y = y
         @shelters = createshelter
+        @ToBookLocationAdapter = IndexToBookLocationAdapter.new
     end
 
     def self.reset
@@ -28,13 +30,16 @@ class Library
     end
 
     def take_book(shelter_index, row_index, column_index)
+        book_location = ToBookLocationAdapter.convert(shelter_index, row_index, column_index)
         if @shelters[shelter_index][row_index][column_index] == "0"
-            return "Slot #{shelter_index+1}. "
+            return "Slot #{book_location} is empty from the start!"
+        else
+            @shelters[shelter_index][row_index][column_index] = "0"
+            return "Slot #{book_location} is free"
         end
     end
 
     def is_index_exceed?(shelter_index, row_index, column_index)
-        # puts shelter_index, @n,row_index, @x,column_index , @y
         if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
             return true
         end

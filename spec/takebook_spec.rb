@@ -56,17 +56,17 @@ describe "Take Book" do
         end
     end 
 
-    # context "execute" do
-        
-    #     it "split put_book|9780201485677|Refactoring|Martin Fowler, Kent Beck return Allocated address: 020103" do
-    #         build_library
-    #         put_book
-    #         put_book2
-    #         put_book3
-    #         put_book4
-    #         put_book5
-    #         response = put_book6
-    #         expect(response).to eq("Allocated address: 020103")
-    #     end
-    # end
+    context "execute" do
+        it "take_book_from|020102 return slot 020102 is free" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @takebook.execute("020102")
+            expect(response).to eq("Slot 020102 is free")
+        end
+    end 
+
 end
