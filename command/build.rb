@@ -3,11 +3,6 @@ require './library'
 
 class Build < Command
 
-    @params
-    @n
-    @x
-    @y
-
     def validate
         if @params.length != 3
             return "Invalid Value!"
@@ -35,7 +30,7 @@ class Build < Command
         end 
         
         Library.createinstance([@n,@x,@y])
-        library = Library.instance
+        
         return printresult
     end
 

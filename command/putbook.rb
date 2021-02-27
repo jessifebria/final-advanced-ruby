@@ -30,9 +30,9 @@ class PutBook < Command
         book = Book.new(@isbn,@title,@author)
         library = Library.instance
         shelters = library.shelters
+
         shelter_index = 0
         row_index = 0
-        column_index = -1
         for shelter in shelters do
             for rows in shelter do
                 row_index = 0

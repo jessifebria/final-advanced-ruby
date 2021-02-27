@@ -22,16 +22,5 @@ class Main
         params = array_of_commands.slice(1,array_of_commands.length)
         return command, params
     end
-    
 
 end
-
-
-
-
-
-
-# a = "|||"
-# b = a.split("|")
-
-# puts(b.length)

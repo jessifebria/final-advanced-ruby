@@ -72,6 +72,12 @@ f = Library.instance
 
 puts f
 
-puts f.shelters
+# puts f.shelters
 
 # g = Library.new(2,1,3)
+
+a = "012234"
+
+c = a[0..1].to_i
+
+puts c
