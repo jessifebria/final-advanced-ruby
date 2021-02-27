@@ -1,8 +1,9 @@
 
 class Library
-    attr_accessor :n, :x, :y, :shelters
+    attr_accessor :shelters
 
     @shelters 
+    @@instance = Library.new()
 
     def initialize(arr)
         @n = arr[0]
@@ -10,25 +11,39 @@ class Library
         @y = arr[2]
     end
 
-    def build
-        @shelters = Array.new(n) {Array.new(x) {Array.new(y){"0"}}}
-        # puts "#{@shelters}, #{x}, #{y}"
-        message = "Shelf 1 with #{@x} rows and #{y} columns is added"
-        for i in 2..n do
-            message += "\nShelf #{i} with #{@x} rows and #{y} columns is added"
-        end
-        return message
+    def self.createinstance(arr)
+        @n = arr[0]
+        @x = arr[1]
+        @y = arr[2]
     end
 
+    def self.instance
+        @@instance 
+    end
+
+    private_class_method :new
+
+    # def build
+    #     @shelters = Array.new(n) {Array.new(x) {Array.new(y){"0"}}}
+    #     # puts "#{@shelters}, #{x}, #{y}"
+    #     message = "Shelf 1 with #{@x} rows and #{y} columns is added"
+    #     for i in 2..n do
+    #         message += "\nShelf #{i} with #{@x} rows and #{y} columns is added"
+    #     end
+    #     return message
+    # end
+
     def put_book(book)
-        puts "#{@shelters}"
+        # puts "#{@shelters}"
         shelter_index = 0
         row_index = 0
         column_index = -1
         for shelter in shelters do
+            # puts"NEW SHELTER"
             for rows in shelter do
+                row_index = 0
                 column_index = rows.index("0")
-                if column_index != nil 
+                if column_index.is_a?Integer 
                     flag = 1
                     @shelters[shelter_index][row_index][column_index] = book
                     break

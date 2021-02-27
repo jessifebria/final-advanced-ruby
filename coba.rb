@@ -1,5 +1,6 @@
 require_relative "library"
 require_relative "main"
+require './command/build'
 
 # $library
 
@@ -43,5 +44,20 @@ require_relative "main"
 
 # puts(3.is_a?Integer)
 
-a = Main.new
-a.parse_command("aa")
+# a = Main.new
+# a.parse_command("aa")
+
+c = Build.new
+puts c.validate("a")
+
+d = Library.createinstance([1,2,3])
+
+puts d
+
+e = Library.instance
+
+puts e
+
+f = Library.instance
+
+puts f

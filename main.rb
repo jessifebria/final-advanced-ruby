@@ -1,5 +1,6 @@
 require_relative 'library'
 require_relative 'book'
+require_relative 'command/build'
 
 $library
 class Main
@@ -8,10 +9,6 @@ class Main
         command, params = parse_command(commands_from_user)
         response = execute_command(command,params)
         return response
-    end
-
-    private def num?(string)
-        return string.to_i.to_s == string
     end
 
     private def parse_command(commands_from_user)
@@ -23,22 +20,30 @@ class Main
     
     private def execute_command(command,params)
         if command == "build_library"
-            if params.length != 3
-                return "Invalid Value!"
-            end
-            for param in params
-                if !num?(param)
-                    return "Invalid Value, It must be an integer!"
-                end
-            end
-            params = params.map(&:to_i) 
-            if params[0]<1
-                return "No Shelf added"
-            end
+            # if params.length != 3
+            #     return "Invalid Value!"
+            # end
+            # for param in params
+            #     if !num?(param)
+            #         return "Invalid Value, It must be an integer!"
+            #     end
+            # end
+            # params = params.map(&:to_i) 
+            # if params[0]<1
+            #     return "No Shelf added"
+            # end
     
-            $library = Library.new(params)
-            return $library.build
-    
+            # $library = Library.new(params)
+            # return $library.build
+            c= Build.new
+            message = c.validate(params)
+            if message == "valid"
+                c.execute(params)
+            else
+                return message 
+            end 
+
+
         elsif command == "put_book"
             if params.length != 3 
                 return "Invalid Value!"
