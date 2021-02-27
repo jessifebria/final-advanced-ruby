@@ -11,13 +11,13 @@ class TakeBook < Command
             return "Invalid Value!"
         end
 
-        @book_location = params[0].to_i
+        @book_location = params[0].to_s
 
         adapter = BookLocationToIndexAdapter.new
         @shelter_index, @row_index, @column_index = adapter.convert(@book_location)
 
         @library = Library.instance
-        
+        # puts @library
         if @library.is_index_exceed?(@shelter_index,@row_index,@column_index)
             return "You exceed limit capacity!"
         end

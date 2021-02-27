@@ -33,7 +33,8 @@ class Library
         end
     end
 
-    def is_index_exceed? (shelter_index, row_index, column_index)
+    def is_index_exceed?(shelter_index, row_index, column_index)
+        # puts shelter_index, @n,row_index, @x,column_index , @y
         if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
             return true
         end

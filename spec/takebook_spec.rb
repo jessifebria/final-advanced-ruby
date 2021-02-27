@@ -19,7 +19,7 @@ describe "Take Book" do
 
     context "validate params" do
         it "give params>1 return Invalid Value" do
-            response = @takebook.validate([34,23])
+            response = @takebook.validate(["34","23"])
             expect(response).to eq("Invalid Value!")
         end
         it "give not an integer param return Invalid Value!" do
@@ -27,20 +27,32 @@ describe "Take Book" do
             expect(response).to eq("Invalid Value!")
         end
         it "give int param, only 1, but length !=6 return Invalid Value!" do
-            response = @takebook.validate([11238])
+            response = @takebook.validate(["11238"])
             expect(response).to eq("Invalid Value!")
         end
         it "give int param, only 1, length == 6, but negative return Invalid Value!" do
-            response = @takebook.validate([-11238])
+            response = @takebook.validate(["-11238"])
             expect(response).to eq("Invalid Value!")
         end
         it "give exceeding value of takebook return You exceed limit capacity!" do
-            response = @takebook.validate([030401])
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @takebook.validate(["010401"])
             expect(response).to eq("You exceed limit capacity!")
         end
         it "give one integer param, length ==6 and <99 return valid" do
-            response = @takebook.validate([112223])
-            expect(response).to eq("valid")
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @takebook.validate(["112223"])
+            expect(response).to eq("You exceed limit capacity!")
         end
     end 
 

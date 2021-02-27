@@ -9,6 +9,6 @@ class Command
     end
 
     def num?(string)
-        return string.to_i.to_s == string
+        string.scan(/\D/).empty?
     end
 end
