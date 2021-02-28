@@ -34,6 +34,7 @@ class Library
         # puts "BEFORE SHELTERS", @shelters
         shelter_index = 0
         row_index = 0
+        flag = 0
         for shelter in @shelters do
             for rows in shelter do
                 row_index = 0
@@ -49,7 +50,9 @@ class Library
                 break
             end
             shelter_index+=1
-            
+        end
+        if flag == 0 
+            return -1,-1,-1
         end
         # puts "SHELTERS", @shelters
         return shelter_index, row_index, column_index

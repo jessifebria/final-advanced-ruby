@@ -31,7 +31,9 @@ class PutBook < Command
         book = Book.new(@isbn,@title,@author)
         library = Library.instance
         shelter_index, row_index, column_index = library.put_book(book)
-        
+        if shelter_index==-1
+            return "All shelves are full!"
+        end
         # puts "LIBRARY ", library
         adapter = IndexToBookLocationAdapter.new
 
