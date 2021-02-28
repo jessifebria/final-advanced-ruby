@@ -1,11 +1,17 @@
 require_relative 'command'
+require './library'
 
-class SearchBookByAuthor < Command
+class SearchBooks < Command
     
+    def initialize(type)
+        @type = type
+    end
+
     def validate(params)
         if (params.length != 1)
             return "Invalid Value!"
         end
+        @keyword = params[0]
         return "valid"
     end
 
@@ -14,6 +20,15 @@ class SearchBookByAuthor < Command
         if message != "valid"
             return message
         end
+        
+        library = Library.instance
+        hash_of_books = library.searchbooks(@type, @keyword)
+
+        printer = PrinterFactory.new_printer('library')
+        response = printer.print(hash_of_books)
+
+        return response
+
     end
     
 end
