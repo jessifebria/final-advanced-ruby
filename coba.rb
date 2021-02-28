@@ -99,3 +99,13 @@ d["c"]= "2"
 for i in d.keys
     puts i, d[i]
 end
+commands_from_user="takebook"
+
+array_of_commands = commands_from_user.split("|")
+command = array_of_commands[0]
+params = array_of_commands.slice(1,array_of_commands.length)
+
+
+if params.length == 0
+    puts "aa"
+end

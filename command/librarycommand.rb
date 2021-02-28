@@ -12,6 +12,7 @@ class LibraryCommand
         @commands["take_book_from"] = TakeBook.new
         @commands["find_book"] = FindBook.new
         @commands["list_books"] = ListBooks.new
+        # @commands["search_books_by_title"] = 
     end
 
     def execute(command,params)
