@@ -15,8 +15,6 @@ describe "Main" do
     let (:put_book7){ @main.input_command("put_book|9780201485697|ABCDE|AA")}
     let (:put_book8){ @main.input_command("put_book|9782901485697|ABCDE|AB")}
     let (:put_book9){ @main.input_command("put_book|9782901485697|ABCDE|AC")}
-    let (:take_book){ @main.input_command("take_book_from|020102")}
-    let (:take_book){ @main.input_command("take_book_from|020102")}
 
     context "input_command build_library" do
         it "split build_library|a|b|4 command return Invalid Value, It must be an integer!" do
@@ -227,5 +225,40 @@ describe "Main" do
             response = @main.input_command("take_book_from|020102")
             expect(response).to eq("Slot 020102 is empty from the start!")
         end
+    end
+
+    context "find_book" do
+        it "give params>1 return Invalid Value" do
+            response = @main.input_command("find_book|34|23")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "give not an integer param return Invalid Value!" do
+            response = @main.input_command("find_book|aa")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "give int param, only 1, but negative return Invalid Value!" do
+            response = @main.input_command("find_book|-1112313")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "find_book|9780807281918 return Found the book at 010102" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("find_book|9780807281918")
+            expect(response).to eq("Found the book at 010102")
+        end
+        it "find_book|100 return Book not found!" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            response = @main.input_command("find_book|100")
+            expect(response).to eq("Book not found!")
+        end
+
     end
 end
