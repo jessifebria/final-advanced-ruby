@@ -10,10 +10,11 @@ class LibraryPrinter < Printer
 
     def print
         response = ""
-        bookprinter = BookPrinter.new
-        for book_location in @hash_of_books.keys     
-            response += "#{book_location} : #{bookprinter.print(@hash_of_books[book_location])}\n"
+        for book_location in @hash_of_books.keys   
+            bookprinter = BookPrinter.new(@hash_of_books[book_location])  
+            response += "#{book_location} : #{bookprinter.print}\n"
         end
+        response
     end
     
 end
