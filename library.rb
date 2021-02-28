@@ -94,8 +94,9 @@ class Library
             shelter_index+=1
         end
         if flag == 0 
-            return "Book not found!"
+            return -1,-1,-1
         end
+        return shelter_index, row_index, column_index
     end
 
 
