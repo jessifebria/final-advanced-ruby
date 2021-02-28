@@ -9,6 +9,10 @@ class Command
     end
 
     def num?(string)
-        string.scan(/\D/).empty?
+        if string[0] == "-"
+            string[1...string.length].scan(/\D/).empty?
+        else
+            string.scan(/\D/).empty?
+        end
     end
 end

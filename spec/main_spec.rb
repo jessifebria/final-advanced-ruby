@@ -34,12 +34,16 @@ describe "Main" do
             response =  @main.input_command("build_library|a-")
             expect(response).to eq("Invalid Value!")
         end
+        it "split build_library|1|100|3 command return You exceed limit capacity!" do
+            response =  @main.input_command("build_library|1|100|3")
+            expect(response).to eq("You exceed limit capacity!")
+        end
         it "split build_library|2|1|3 command return Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added " do
             response =  build_library
             expect(response).to eq("Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added")
         end
         it "split build_library|0|1|3 command return No Shelf added " do
-            response =  @main.input_command("build_library|0|1|3")
+            response =  @main.input_command("build_library|-1|1|3")
             expect(response).to eq("No Shelf added")
         end
         it "split build_library|4|1|3 command return Shelf 1 with 1 rows and 3 columns is added\nShelf 2 with 1 rows and 3 columns is added\nShelf 3 with 1 rows and 3 columns is added\nShelf 4 with 1 rows and 3 columns is added" do

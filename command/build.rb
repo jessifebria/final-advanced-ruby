@@ -10,15 +10,19 @@ class Build < Command
         for param in @params
             if !num?(param)
                 return "Invalid Value, It must be an integer!"
+            else 
+                if param.to_i<1
+                    return "No Shelf added"
+                elsif param.to_i>99
+                    return "You exceed limit capacity!"
+                end 
             end
         end
         @params = @params.map(&:to_i) 
-        if @params[0]<1
-            return "No Shelf added"
-        end
         @n = @params[0]
         @x = @params[1]
         @y = @params[2]
+
         return "valid"
     end
 
