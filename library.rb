@@ -31,31 +31,16 @@ class Library
     end
 
     def put_book(book)
-        # puts "BEFORE SHELTERS", @shelters
-        shelter_index = 0
-        row_index = 0
-        flag = 0
-        for shelter in @shelters do
-            for rows in shelter do
-                row_index = 0
-                column_index = rows.index(0)
+        for shelter_index in 0...@shelters.length do
+            for row_index in 0...@shelters[shelter_index].length do
+                column_index = @shelters[shelter_index][row_index].index(0)
                 if column_index.is_a?Integer 
-                    flag = 1
                     @shelters[shelter_index][row_index][column_index] = book
-                    break
+                    return shelter_index, row_index, column_index
                 end
-                row_index+=1
             end
-            if flag == 1
-                break
-            end
-            shelter_index+=1
         end
-        if flag == 0 
-            return -1,-1,-1
-        end
-        # puts "SHELTERS", @shelters
-        return shelter_index, row_index, column_index
+        return -1,-1,-1
     end
 
     def take_book(shelter_index, row_index, column_index)
@@ -79,7 +64,6 @@ class Library
                 end
             end
         end
-        
         return -1,-1,-1
     end
 

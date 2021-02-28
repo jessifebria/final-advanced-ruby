@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-02-28T17:56:38+07:00">2021-02-28T17:56:38+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-02-28T17:58:28+07:00">2021-02-28T17:58:28+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  99.19%
+  99.17%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         14.61
+         13.6
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>492</b> relevant lines,
-    <span class="green"><b>488</b> lines covered</span> and
+    <b>484</b> relevant lines,
+    <span class="green"><b>480</b> lines covered</span> and
     <span class="red"><b>4</b> lines missed. </span>
     (<span class="green">
-  99.19%
+  99.17%
 </span>
 )
   </div>
@@ -183,11 +183,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5f259287138ca81a12edc66b1f6ca347f34aa90e" class="src_link" title="library.rb">library.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">98</td>
-            <td class="cell--number">59</td>
-            <td class="cell--number">59</td>
+            <td class="cell--number">109</td>
+            <td class="cell--number">51</td>
+            <td class="cell--number">51</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">36.03</td>
+            <td class="cell--number">29.82</td>
             
           </tr>
         
@@ -3568,8 +3568,8 @@
     
 
     <div class="t-line-summary">
-      <b>59</b> relevant lines.
-      <span class="green"><b>59</b> lines covered</span> and
+      <b>51</b> relevant lines.
+      <span class="green"><b>51</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3988,24 +3988,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="81" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="81" data-linenumber="39">
             <span class="hits">81</span>
             
 
             
 
-            <code class="ruby">        for shelter in @shelters do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="111" data-linenumber="39">
-            <span class="hits">111</span>
-            
-
-            
-
-            <code class="ruby">            for rows in shelter do</code>
+            <code class="ruby">        for shelter_index in 0...@shelters.length do</code>
           </li>
         </div>
       
@@ -4016,7 +4016,7 @@
 
             
 
-            <code class="ruby">                row_index = 0</code>
+            <code class="ruby">            for row_index in 0...@shelters[shelter_index].length do</code>
           </li>
         </div>
       
@@ -4027,7 +4027,7 @@
 
             
 
-            <code class="ruby">                column_index = rows.index(0)</code>
+            <code class="ruby">                column_index = @shelters[shelter_index][row_index].index(0)</code>
           </li>
         </div>
       
@@ -4049,7 +4049,7 @@
 
             
 
-            <code class="ruby">                    flag = 1</code>
+            <code class="ruby">                    @shelters[shelter_index][row_index][column_index] = book</code>
           </li>
         </div>
       
@@ -4060,18 +4060,18 @@
 
             
 
-            <code class="ruby">                    @shelters[shelter_index][row_index][column_index] = book</code>
+            <code class="ruby">                    return shelter_index, row_index, column_index</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="80" data-linenumber="45">
-            <span class="hits">80</span>
+          <li class="never" data-hits="" data-linenumber="45">
+            
             
 
             
 
-            <code class="ruby">                    break</code>
+            <code class="ruby">                end</code>
           </li>
         </div>
       
@@ -4082,78 +4082,12 @@
 
             
 
-            <code class="ruby">                end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="47">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">                row_index+=1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="48">
-            
-            
-
-            
-
             <code class="ruby">            end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="111" data-linenumber="49">
-            <span class="hits">111</span>
-            
-
-            
-
-            <code class="ruby">            if flag == 1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="80" data-linenumber="50">
-            <span class="hits">80</span>
-            
-
-            
-
-            <code class="ruby">                break</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">            end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="31" data-linenumber="52">
-            <span class="hits">31</span>
-            
-
-            
-
-            <code class="ruby">            shelter_index+=1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -4164,326 +4098,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="81" data-linenumber="54">
-            <span class="hits">81</span>
-            
-
-            
-
-            <code class="ruby">        if flag == 0 </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">            return -1,-1,-1</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby">        # puts &quot;SHELTERS&quot;, @shelters</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="80" data-linenumber="58">
-            <span class="hits">80</span>
-            
-
-            
-
-            <code class="ruby">        return shelter_index, row_index, column_index</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="60">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="61">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def take_book(shelter_index, row_index, column_index)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="62">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        if @shelters[shelter_index][row_index][column_index] == 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">            return false</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="65">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">        @shelters[shelter_index][row_index][column_index] = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="66">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">        return true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
-            <code class="ruby">    </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def find_book(isbn_from_user)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="70">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">        for shelter_index in 0...@shelters.length do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="71">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">            for row_index in 0...@shelters[shelter_index].length do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="3" data-linenumber="72">
-            <span class="hits">3</span>
-            
-
-            
-
-            <code class="ruby">                for column_index in 0...@shelters[shelter_index][row_index].length do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="73">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">                    book = @shelters[shelter_index][row_index][column_index]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="74">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">                    if book != 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="75">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">                        if book.is_isbn_same?(isbn_from_user)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="76">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">                            return shelter_index, row_index, column_index</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby">                        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">                    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="79">
-            
-            
-
-            
-
-            <code class="ruby">                end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="80">
-            
-            
-
-            
-
-            <code class="ruby">            end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="81">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby">        </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="83">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
@@ -4494,7 +4109,249 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="84">
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="50">
+            
+            
+
+            
+
+            <code class="ruby">        # for shelter in @shelters do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby">        #     for rows in shelter do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">        #         row_index = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">        #         column_index = rows.index(0)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">        #         if column_index.is_a?Integer </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">        #             flag = 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">        #             @shelters[shelter_index][row_index][column_index] = book</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">        #             break</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">        #         end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">        #         row_index+=1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">        #     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">        #     if flag == 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">        #         break</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">        #     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">        #     shelter_index+=1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="65">
+            
+            
+
+            
+
+            <code class="ruby">        # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">        # if flag == 0 </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">        #     return -1,-1,-1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
+            
+            
+
+            
+
+            <code class="ruby">        # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="69">
+            
+            
+
+            
+
+            <code class="ruby">        # # puts &quot;SHELTERS&quot;, @shelters</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">        # return shelter_index, row_index, column_index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
             
             
 
@@ -4505,7 +4362,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="85">
+          <li class="never" data-hits="" data-linenumber="72">
             
             
 
@@ -4516,51 +4373,40 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="86">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="87">
+          <li class="covered" data-hits="1" data-linenumber="73">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def is_index_exceed?(shelter_index, row_index, column_index)</code>
+            <code class="ruby">    def take_book(shelter_index, row_index, column_index)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="88">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="9" data-linenumber="74">
+            <span class="hits">9</span>
             
 
             
 
-            <code class="ruby">        if (shelter_index &gt;= @n) or (row_index &gt;= @x) or (column_index &gt;= @y)</code>
+            <code class="ruby">        if @shelters[shelter_index][row_index][column_index] == 0</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="89">
-            <span class="hits">2</span>
+          <li class="covered" data-hits="1" data-linenumber="75">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">            return true</code>
+            <code class="ruby">            return false</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="90">
+          <li class="never" data-hits="" data-linenumber="76">
             
             
 
@@ -4571,13 +4417,167 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="9" data-linenumber="91">
-            <span class="hits">9</span>
+          <li class="covered" data-hits="8" data-linenumber="77">
+            <span class="hits">8</span>
             
 
             
 
-            <code class="ruby">        return false</code>
+            <code class="ruby">        @shelters[shelter_index][row_index][column_index] = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="78">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">        return true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="80">
+            
+            
+
+            
+
+            <code class="ruby">    </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="81">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def find_book(isbn_from_user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="82">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">        for shelter_index in 0...@shelters.length do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="83">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">            for row_index in 0...@shelters[shelter_index].length do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="84">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">                for column_index in 0...@shelters[shelter_index][row_index].length do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="85">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">                    book = @shelters[shelter_index][row_index][column_index]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="86">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">                    if book != 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="87">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">                        if book.is_isbn_same?(isbn_from_user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="88">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">                            return shelter_index, row_index, column_index</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="89">
+            
+            
+
+            
+
+            <code class="ruby">                        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="90">
+            
+            
+
+            
+
+            <code class="ruby">                    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="91">
+            
+            
+
+            
+
+            <code class="ruby">                end</code>
           </li>
         </div>
       
@@ -4588,7 +4588,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">            end</code>
           </li>
         </div>
       
@@ -4599,7 +4599,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        end</code>
           </li>
         </div>
       
@@ -4610,18 +4610,18 @@
 
             
 
-            <code class="ruby">    private def createshelter</code>
+            <code class="ruby">        return -1,-1,-1</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="258" data-linenumber="95">
-            <span class="hits">258</span>
+          <li class="never" data-hits="" data-linenumber="95">
+            
             
 
             
 
-            <code class="ruby">        Array.new(@n) {Array.new(@x) {Array.new(@y){0}}}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4632,7 +4632,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4648,7 +4648,128 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="98">
+          <li class="covered" data-hits="1" data-linenumber="98">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def is_index_exceed?(shelter_index, row_index, column_index)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="11" data-linenumber="99">
+            <span class="hits">11</span>
+            
+
+            
+
+            <code class="ruby">        if (shelter_index &gt;= @n) or (row_index &gt;= @x) or (column_index &gt;= @y)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="100">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">            return true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="101">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="9" data-linenumber="102">
+            <span class="hits">9</span>
+            
+
+            
+
+            <code class="ruby">        return false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="103">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="104">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="105">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    private def createshelter</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="258" data-linenumber="106">
+            <span class="hits">258</span>
+            
+
+            
+
+            <code class="ruby">        Array.new(@n) {Array.new(@x) {Array.new(@y){0}}}</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="107">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="108">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="109">
             
             
 
