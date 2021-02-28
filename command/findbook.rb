@@ -9,9 +9,7 @@ class FindBook < Command
         if (params.length != 1) or (num?(params[0].to_s) == false) or params[0].to_i<1
             return "Invalid Value!"
         end
-    
         @isbn = params[0]
-
         return "valid"
     end
 
@@ -30,6 +28,7 @@ class FindBook < Command
         for shelter in shelters do
             for rows in shelter do
                 row_index = 0
+                column_index = 0
                 for book in rows do
                     if book != 0
                         if book.isbn == @isbn
@@ -37,6 +36,10 @@ class FindBook < Command
                             break
                         end
                     end
+                    column_index +=1 
+                end
+                if flag == 1
+                    break
                 end
                 row_index+=1
             end
