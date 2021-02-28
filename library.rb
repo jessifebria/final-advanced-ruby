@@ -67,7 +67,22 @@ class Library
         return -1,-1,-1
     end
 
-
+    def get_hash_of_books
+        response = ""
+        hash_of_books = Hash.new
+        for shelter_index in 0...@shelters.length do
+            for row_index in 0...@shelters[shelter_index].length do
+                for column_index in 0...@shelters[shelter_index][row_index].length do
+                    if @shelters[shelter_index][row_index][column_index] != 0
+                        book_location = @ToBookLocationAdapter.convert(shelter_index,column_index, row_index)
+                        hash_of_books[book_location] = @shelters[shelter_index][row_index][column_index]
+                    end
+                end
+            end
+        end
+        return hash_of_books
+    end
+    
     def is_index_exceed?(shelter_index, row_index, column_index)
         if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
             return true
