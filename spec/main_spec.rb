@@ -281,7 +281,7 @@ describe "Main" do
             put_book4
             put_book5
             response = @main.input_command("search_books_by_title|Harry Potter")
-            expect(response).to eq("010101 : 9780747532743 | Harry Potter 1 | J. K. Rowling\n010201 : 9780807281918 | Harry Potter 2 | J. K. Rowling\n010301 : 9780739330944 | Eragon 1 | Christopher Paolini\n020101 : 9780545582933 | Harry Potter 3 | J. K. Rowling\n")
+            expect(response).to eq("010101 : 9780747532743 | Harry Potter 1 | J. K. Rowling\n010201 : 9780807281918 | Harry Potter 2 | J. K. Rowling\n020101 : 9780545582933 | Harry Potter 3 | J. K. Rowling\n")
         end
         it "return book not found" do
             build_library

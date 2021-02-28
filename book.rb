@@ -13,15 +13,15 @@ class Book
         false
     end
     
-    def is_author_same?(author_from_user)
-        if author == author_from_user
+    def is_author_contains?(author_from_user)
+        if author.include? author_from_user
             return true
         end
         false
     end
     
-    def is_title_same?(title_from_user)
-        if title == title_from_user
+    def is_title_contains?(title_from_user)
+        if title.include? title_from_user
             return true
         end
         false

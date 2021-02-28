@@ -91,9 +91,11 @@ class Library
             for row_index in 0...@shelters[shelter_index].length do
                 for column_index in 0...@shelters[shelter_index][row_index].length do
                     book = @shelters[shelter_index][row_index][column_index]
-                    if (type == "author" and book.is_author_same?(keyword)) or (type == "title" and book.is_title_same?(keyword))
-                        book_location = @ToBookLocationAdapter.convert(shelter_index,column_index, row_index)
-                        hash_of_books[book_location] = book
+                    if book != 0
+                        if (type == "author" and book.is_author_contains?(keyword)) or (type == "title" and book.is_title_contains?(keyword))
+                            book_location = @ToBookLocationAdapter.convert(shelter_index,column_index, row_index)
+                            hash_of_books[book_location] = book
+                        end
                     end
                 end
             end
