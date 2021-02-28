@@ -12,6 +12,8 @@ describe "Main" do
     let (:put_book4){ @main.input_command("put_book|9780545582933|Harry Potter 3|J. K. Rowling") }
     let (:put_book5){ @main.input_command("put_book|9780132350884|Clean Code|Robert Cecil Martin")}
     let (:put_book6){ @main.input_command("put_book|9780201485677|Refactoring|Martin Fowler, Kent Beck")}
+    let (:take_book){ @main.input_command("take_book_from|020102")}
+    let (:take_book){ @main.input_command("take_book_from|020102")}
 
     context "input_command build_library" do
         it "split build_library|a|b|4 command return Invalid Value, It must be an integer!" do
@@ -108,6 +110,73 @@ describe "Main" do
             put_book5
             response = put_book6
             expect(response).to eq("Allocated address: 020103")
+        end
+    end
+    context 'take book from' do
+        it "give params>1 return Invalid Value" do
+            response = @main.input_command("take_book_from|34|23")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "give not an integer param return Invalid Value!" do
+            response = @main.input_command("take_book_from|aa")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "give int param, only 1, but length !=6 return Invalid Value!" do
+            response = @main.input_command("take_book_from|11238")
+            expect(response).to eq("Invalid Value!")
+        end
+        it "give int param, only 1, length == 6, but negative return Invalid Value!" do
+            response = @main.input_command("take_book_from|-11238")
+            expect(response).to eq("Invalid Value!")
+        end
+        
+        it "give exceeding value of takebook return You exceed limit capacity!" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("take_book_from|010401")
+            expect(response).to eq("You exceed limit capacity!")
+        end
+        it "give one integer param, length ==6 and <99 return valid" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response =  @main.input_command("take_book_from|112223")
+            expect(response).to eq("You exceed limit capacity!")
+        end
+
+        it "take_book_from|020102 return slot 020102 is free" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response =  @main.input_command("take_book_from|020102")
+            expect(response).to eq("Slot 020102 is free")
+        end
+        it "take_book_from|010102 return slot 010102 is free" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            response =  @main.input_command("take_book_from|010102")
+            expect(response).to eq("Slot 010102 is free")
+        end
+        it "take_book_from|020102 return slot 020102 is empty from the start" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            response = @main.input_command("take_book_from|020102")
+            expect(response).to eq("Slot 020102 is empty from the start!")
         end
     end
 end
