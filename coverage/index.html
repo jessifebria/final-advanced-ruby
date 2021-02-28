@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-02-28T10:41:02+07:00">2021-02-28T10:41:02+07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-02-28T11:31:10+07:00">2021-02-28T11:31:10+07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         14.84
+         14.78
        </span>
     </span> hits/line
     )
@@ -150,11 +150,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#7e8332d85230bbfb2ad73745a4513a03864f1984" class="src_link" title="command/takebook.rb">command/takebook.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">21</td>
-            <td class="cell--number">21</td>
+            <td class="cell--number">40</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">6.95</td>
+            <td class="cell--number">6.74</td>
             
           </tr>
         
@@ -165,18 +165,18 @@
             <td class="cell--number">4</td>
             <td class="cell--number">4</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">43.00</td>
+            <td class="cell--number">38.50</td>
             
           </tr>
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#5f259287138ca81a12edc66b1f6ca347f34aa90e" class="src_link" title="library.rb">library.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">88</td>
-            <td class="cell--number">52</td>
-            <td class="cell--number">52</td>
+            <td class="cell--number">82</td>
+            <td class="cell--number">50</td>
+            <td class="cell--number">50</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">38.35</td>
+            <td class="cell--number">39.54</td>
             
           </tr>
         
@@ -194,7 +194,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6eea2df46a35dcbc41cce45c0d4b309fcc95a5d9" class="src_link" title="spec/main_spec.rb">spec/main_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">264</td>
+            <td class="cell--number">263</td>
             <td class="cell--number">216</td>
             <td class="cell--number">216</td>
             <td class="cell--number">0</td>
@@ -2683,8 +2683,8 @@
     
 
     <div class="t-line-summary">
-      <b>21</b> relevant lines.
-      <span class="green"><b>21</b> lines covered</span> and
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3065,7 +3065,7 @@
 
             
 
-            <code class="ruby">        message = @library.take_book(@shelter_index, @row_index, @column_index)</code>
+            <code class="ruby">        status = @library.take_book(@shelter_index, @row_index, @column_index)</code>
           </li>
         </div>
       
@@ -3076,12 +3076,45 @@
 
             
 
-            <code class="ruby">        return message</code>
+            <code class="ruby">        if status</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="covered" data-hits="8" data-linenumber="36">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">            return &quot;Slot #{@book_location} is free&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="38">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        return &quot;Slot #{@book_location} is empty from the start!&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -3092,7 +3125,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -3167,8 +3200,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="85" data-linenumber="4">
-            <span class="hits">85</span>
+          <li class="covered" data-hits="76" data-linenumber="4">
+            <span class="hits">76</span>
             
 
             
@@ -3178,8 +3211,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="85" data-linenumber="5">
-            <span class="hits">85</span>
+          <li class="covered" data-hits="76" data-linenumber="5">
+            <span class="hits">76</span>
             
 
             
@@ -3229,8 +3262,8 @@
     
 
     <div class="t-line-summary">
-      <b>52</b> relevant lines.
-      <span class="green"><b>52</b> lines covered</span> and
+      <b>50</b> relevant lines.
+      <span class="green"><b>50</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -3919,56 +3952,23 @@
 
             
 
-            <code class="ruby">        book_location = @ToBookLocationAdapter.convert(shelter_index, row_index, column_index)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="63">
-            <span class="hits">9</span>
-            
-
-            
-
             <code class="ruby">        if @shelters[shelter_index][row_index][column_index] == 0</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="64">
+          <li class="covered" data-hits="1" data-linenumber="63">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">            return &quot;Slot #{book_location} is empty from the start!&quot;</code>
+            <code class="ruby">            return false</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">        else</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="8" data-linenumber="66">
-            <span class="hits">8</span>
-            
-
-            
-
-            <code class="ruby">            @shelters[shelter_index][row_index][column_index] = 0</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
+          <li class="never" data-hits="" data-linenumber="64">
             
             
 
@@ -3979,46 +3979,79 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="8" data-linenumber="65">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">        @shelters[shelter_index][row_index][column_index] = 0</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="8" data-linenumber="66">
+            <span class="hits">8</span>
+            
+
+            
+
+            <code class="ruby">        return true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="68">
             
             
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="69">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="1" data-linenumber="69">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">        if @shelters[shelter_index][row_index][column_index] == 0</code>
+            <code class="ruby">    def is_index_exceed?(shelter_index, row_index, column_index)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="70">
-            
-            
-
+          <li class="covered" data-hits="11" data-linenumber="70">
+            <span class="hits">11</span>
             
 
-            <code class="ruby">            # puts &quot;TAKE BOOK SHELTERS&quot;, @shelters</code>
+            
+
+            <code class="ruby">        if (shelter_index &gt;= @n) or (row_index &gt;= @x) or (column_index &gt;= @y)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="71">
-            <span class="hits">8</span>
+          <li class="covered" data-hits="2" data-linenumber="71">
+            <span class="hits">2</span>
             
 
             
 
-            <code class="ruby">            return &quot;Slot #{book_location} is free&quot;</code>
+            <code class="ruby">            return true</code>
           </li>
         </div>
       
@@ -4034,13 +4067,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="73">
-            
-            
-
+          <li class="covered" data-hits="9" data-linenumber="73">
+            <span class="hits">9</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">        return false</code>
           </li>
         </div>
       
@@ -4051,62 +4084,62 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
+            
+            
+
+            
+
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="75">
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="78">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def is_index_exceed?(shelter_index, row_index, column_index)</code>
+            <code class="ruby">    private def createshelter</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="11" data-linenumber="76">
-            <span class="hits">11</span>
+          <li class="covered" data-hits="247" data-linenumber="79">
+            <span class="hits">247</span>
             
 
             
 
-            <code class="ruby">        if (shelter_index &gt;= @n) or (row_index &gt;= @x) or (column_index &gt;= @y)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="77">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">            return true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="78">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="9" data-linenumber="79">
-            <span class="hits">9</span>
-            
-
-            
-
-            <code class="ruby">        return false</code>
+            <code class="ruby">        Array.new(@n) {Array.new(@x) {Array.new(@y){0}}}</code>
           </li>
         </div>
       
@@ -4134,72 +4167,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="82">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="84">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    private def createshelter</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="247" data-linenumber="85">
-            <span class="hits">247</span>
-            
-
-            
-
-            <code class="ruby">        Array.new(@n) {Array.new(@x) {Array.new(@y){0}}}</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="86">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
             
             
 
@@ -7556,23 +7523,12 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="263">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="264">
+          <li class="never" data-hits="" data-linenumber="263">
             
             
 

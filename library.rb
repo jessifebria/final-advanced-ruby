@@ -59,19 +59,13 @@ class Library
     end
 
     def take_book(shelter_index, row_index, column_index)
-        book_location = @ToBookLocationAdapter.convert(shelter_index, row_index, column_index)
         if @shelters[shelter_index][row_index][column_index] == 0
-            return "Slot #{book_location} is empty from the start!"
-        else
-            @shelters[shelter_index][row_index][column_index] = 0
+            return false
         end
-
-        if @shelters[shelter_index][row_index][column_index] == 0
-            # puts "TAKE BOOK SHELTERS", @shelters
-            return "Slot #{book_location} is free"
-        end
+        @shelters[shelter_index][row_index][column_index] = 0
+        return true
     end
-
+    
     def is_index_exceed?(shelter_index, row_index, column_index)
         if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
             return true

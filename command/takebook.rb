@@ -31,7 +31,10 @@ class TakeBook < Command
             return message
         end
         # puts "LIBRARY ", @library
-        message = @library.take_book(@shelter_index, @row_index, @column_index)
-        return message
+        status = @library.take_book(@shelter_index, @row_index, @column_index)
+        if status
+            return "Slot #{@book_location} is free"
+        end
+        return "Slot #{@book_location} is empty from the start!"
     end
 end
