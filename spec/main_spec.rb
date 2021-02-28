@@ -259,6 +259,5 @@ describe "Main" do
             response = @main.input_command("find_book|100")
             expect(response).to eq("Book not found!")
         end
-
     end
 end
