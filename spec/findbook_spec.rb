@@ -37,6 +37,15 @@ describe "Find Book" do
     end 
 
     context "execute" do
+        it "find_book|-1238123 return Invalid Value!" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            response = @findbook.execute(["-1238123"])
+            expect(response).to eq("Invalid Value!")
+        end
         it "find_book|9780807281918 return Found the book at 010102" do
             build_library
             put_book
