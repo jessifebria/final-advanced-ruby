@@ -272,4 +272,48 @@ describe "Main" do
             expect(response).to eq("010101 : 9780747532743 | Harry Potter 1 | J. K. Rowling\n010201 : 9780807281918 | Harry Potter 2 | J. K. Rowling\n010301 : 9780739330944 | Eragon 1 | Christopher Paolini\n020101 : 9780545582933 | Harry Potter 3 | J. K. Rowling\n020201 : 9780132350884 | Clean Code | Robert Cecil Martin\n")
         end
     end
+    context "search_books_by_title" do
+        it "return as expected when book found" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("search_books_by_title|Harry Potter")
+            expect(response).to eq("010101 : 9780747532743 | Harry Potter 1 | J. K. Rowling\n010201 : 9780807281918 | Harry Potter 2 | J. K. Rowling\n010301 : 9780739330944 | Eragon 1 | Christopher Paolini\n020101 : 9780545582933 | Harry Potter 3 | J. K. Rowling\n")
+        end
+        it "return book not found" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("search_books_by_title|Hellowww")
+            expect(response).to eq("Book not found!")
+        end
+    end
+    context "search_books_by_author" do
+        it "return as expected when book found" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("search_books_by_author|Paolini")
+            expect(response).to eq("010301 : 9780739330944 | Eragon 1 | Christopher Paolini\n")
+        end
+        it "return book not found" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            response = @main.input_command("search_books_by_author|Jessi")
+            expect(response).to eq("Book not found!")
+        end
+    end
 end

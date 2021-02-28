@@ -109,3 +109,13 @@ params = array_of_commands.slice(1,array_of_commands.length)
 if params.length == 0
     puts "aa"
 end
+
+a = Hash.new
+
+if a.keys.length == 0
+    puts "bb"
+end
+
+if a.empty?
+    puts "cc"
+end

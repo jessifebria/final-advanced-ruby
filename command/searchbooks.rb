@@ -23,6 +23,10 @@ class SearchBooks < Command
         
         library = Library.instance
         hash_of_books = library.searchbooks(@type, @keyword)
+        
+        if hash_of_books.empty?
+            return "Book not found!"
+        end
 
         printer = PrinterFactory.new_printer('library')
         response = printer.print(hash_of_books)
