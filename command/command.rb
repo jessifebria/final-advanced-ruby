@@ -1,11 +1,11 @@
 class Command
     
     def validate(params)
-        puts "Not Implemented yet"
+        "Not Implemented Yet"
     end
 
     def execute(params)
-        puts "Not Implemented yet"
+        "Not Implemented Yet"
     end
 
     def num?(string)

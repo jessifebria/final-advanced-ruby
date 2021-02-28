@@ -273,6 +273,13 @@ describe "Main" do
         end
     end
     context "search_books_by_title" do
+        it "return invalid value when no param" do
+            build_library
+            put_book
+            put_book2
+            response = @main.input_command("search_books_by_title|")
+            expect(response).to eq("Invalid Value!")
+        end
         it "return as expected when book found" do
             build_library
             put_book
@@ -295,6 +302,13 @@ describe "Main" do
         end
     end
     context "search_books_by_author" do
+        it "return invalid value when no param" do
+            build_library
+            put_book
+            put_book2
+            response = @main.input_command("search_books_by_author|")
+            expect(response).to eq("Invalid Value!")
+        end
         it "return as expected when book found" do
             build_library
             put_book
