@@ -26,7 +26,7 @@ describe "List Books" do
             put_book4
             put_book5
             response = @listbooks.execute
-            expect(response).to eq("You exceed limit capacity!")
+            expect(response).to eq("010101 : 9780747532743 | Harry Potter 1 | J. K. Rowling\n010201 : 9780807281918 | Harry Potter 2 | J. K. Rowling\n010301 : 9780739330944 | Eragon 1 | Christopher Paolini\n020101 : 9780545582933 | Harry Potter 3 | J. K. Rowling\n020201 : 9780132350884 | Clean Code | Robert Cecil Martin\n")
         end
     end 
 

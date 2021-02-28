@@ -19,7 +19,7 @@ class ListBooks
                 column_index = 0
                 for book in rows do
                     if book != 0
-                        response += "\n#{adapter.convert(shelter_index,column_index, row_index)} : #{book.print_detail}"
+                        response += "#{adapter.convert(shelter_index,column_index, row_index)} : #{book.print_detail}\n"
                         column_index +=1 
                     end
                 end
