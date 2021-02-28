@@ -1,6 +1,7 @@
 require_relative 'command'
 require './library'
 require './book'
+require './index_to_booklocation_adapter'
 
 class PutBook < Command
 
@@ -31,6 +32,8 @@ class PutBook < Command
         library = Library.instance
         shelter_index, row_index, column_index = library.put_book(book)
         
-        return "Allocated address: #{(shelter_index+1).to_s.rjust(2, "0")}#{(row_index+1).to_s.rjust(2, "0")}#{(column_index+1).to_s.rjust(2, "0")}"
+        adapter = IndexToBookLocationAdapter.new
+
+        return "Allocated address: #{adapter.convert(shelter_index, row_index, column_index)}"
     end
 end
