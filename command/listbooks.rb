@@ -11,33 +11,18 @@ class ListBooks
         response = ""
         library = Library.instance
         shelters = library.shelters
-        shelter_index = 0
-        row_index = 0
-        flag = 0
         hash_of_books = Hash.new
-        for shelter in shelters do
-            for rows in shelter do
-                row_index = 0
-                column_index = 0
-                for book in rows do
-                    if book != 0
+        for shelter_index in 0...shelters.length do
+            for row_index in 0...shelters[shelter_index].length do
+                for column_index in 0...shelters[shelter_index][row_index].length do
+                    if shelters[shelter_index][row_index][column_index] != 0
                         book_location = adapter.convert(shelter_index,column_index, row_index)
-                        hash_of_books[book_location] = book
-                        column_index +=1 
+                        hash_of_books[book_location] = shelters[shelter_index][row_index][column_index]
                     end
                 end
-                if flag == 1
-                    break
-                end
-                row_index+=1
             end
-            if flag == 1
-                break
-            end
-            shelter_index+=1
         end
 
-        
         printer = PrinterFactory.new_printer('library')
         response = printer.print(hash_of_books)
 
