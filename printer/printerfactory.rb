@@ -7,7 +7,7 @@ class PrinterFactory
         case type
         when 'library'
             LibraryPrinter.new
-        when 'bookprinter'
+        when 'book'
             BookPrinter.new
         end
     end
