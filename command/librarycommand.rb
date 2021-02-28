@@ -14,7 +14,7 @@ class LibraryCommand
         @commands["list_books"] = ListBooks.new
     end
 
-    def execute(command,params=nil)
+    def execute(command,params)
         if params==nil
             @commands[command].execute
         else

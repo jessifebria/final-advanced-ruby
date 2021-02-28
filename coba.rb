@@ -81,3 +81,13 @@ a = "012234"
 c = a[0..1].to_i
 
 puts c
+
+d = "123"
+
+e, f = d.split("|")
+
+puts "f", f, "c"
+
+if f==nil
+    puts "aa"
+end

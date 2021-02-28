@@ -19,7 +19,9 @@ class Main
     private def parse_command(commands_from_user)
         array_of_commands = commands_from_user.split("|")
         command = array_of_commands[0]
-        params = array_of_commands.slice(1,array_of_commands.length)
+        if command != "list_books"
+            params = array_of_commands.slice(1,array_of_commands.length)
+        end
         return command, params
     end
 
