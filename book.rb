@@ -12,4 +12,8 @@ class Book
         end
         false
     end
+
+    def print_detail 
+        "#{@isbn} | #{@title} | #{@author}"
+    end
 end
