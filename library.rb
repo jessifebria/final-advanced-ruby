@@ -66,6 +66,39 @@ class Library
         return true
     end
     
+    def find_book(isbn_from_user)
+        shelter_index = 0
+        row_index = 0
+        flag = 0
+        for shelter in @shelters do
+            for rows in shelter do
+                row_index = 0
+                column_index = 0
+                for book in rows do
+                    if book != 0
+                        if book.is_isbn_same?(isbn_from_user)
+                            flag = 1
+                            break
+                        end
+                    end
+                    column_index +=1 
+                end
+                if flag == 1
+                    break
+                end
+                row_index+=1
+            end
+            if flag == 1
+                break
+            end
+            shelter_index+=1
+        end
+        if flag == 0 
+            return "Book not found!"
+        end
+    end
+
+
     def is_index_exceed?(shelter_index, row_index, column_index)
         if (shelter_index >= @n) or (row_index >= @x) or (column_index >= @y)
             return true
