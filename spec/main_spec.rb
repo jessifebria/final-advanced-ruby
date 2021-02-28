@@ -316,4 +316,10 @@ describe "Main" do
             expect(response).to eq("Book not found!")
         end
     end
+    context "give invalid command" do
+        it "return invalid command when unknown command given" do
+            response = @main.input_command("throw_library")
+            expect(response).to eq("Invalid Command!")
+        end
+    end
 end

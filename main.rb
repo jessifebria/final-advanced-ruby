@@ -8,11 +8,17 @@ class Main
     
     def initialize
        @librarycommand = LibraryCommand.new
+       @array_commands = ["build_library", "put_book","take_book_from" , "find_book", "list_books", "search_books_by_title", "search_books_by_author"]
+        
     end
 
     def input_command(commands_from_user)
         command, params = parse_command(commands_from_user)
-        response = @librarycommand.execute(command, params)
+        if @array_commands.include? command
+            response = @librarycommand.execute(command, params)
+        else 
+            response = "Invalid Command!"
+        end
         return response
     end
 
