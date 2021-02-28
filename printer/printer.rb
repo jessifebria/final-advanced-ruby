@@ -1,6 +1,6 @@
 class Printer
     
-    def print
+    def print(params)
         "Not Implemented Yet"
     end
     

@@ -91,3 +91,11 @@ puts "f", f, "c"
 if f==nil
     puts "aa"
 end
+
+d = Hash.new
+d["a"] ="1"
+d["c"]= "2"
+
+for i in d.keys
+    puts i, d[i]
+end
