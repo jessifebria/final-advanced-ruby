@@ -32,6 +32,7 @@ class PutBook < Command
         library = Library.instance
         shelter_index, row_index, column_index = library.put_book(book)
         
+        # puts "LIBRARY ", library
         adapter = IndexToBookLocationAdapter.new
 
         return "Allocated address: #{adapter.convert(shelter_index, row_index, column_index)}"

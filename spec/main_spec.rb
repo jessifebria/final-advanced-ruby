@@ -12,6 +12,8 @@ describe "Main" do
     let (:put_book4){ @main.input_command("put_book|9780545582933|Harry Potter 3|J. K. Rowling") }
     let (:put_book5){ @main.input_command("put_book|9780132350884|Clean Code|Robert Cecil Martin")}
     let (:put_book6){ @main.input_command("put_book|9780201485677|Refactoring|Martin Fowler, Kent Beck")}
+    let (:put_book7){ @main.input_command("put_book|9780201485697|ABCDE|AA")}
+    let (:put_book8){ @main.input_command("put_book|9782901485697|ABCDE|AB")}
     let (:take_book){ @main.input_command("take_book_from|020102")}
     let (:take_book){ @main.input_command("take_book_from|020102")}
 
@@ -110,6 +112,33 @@ describe "Main" do
             put_book5
             response = put_book6
             expect(response).to eq("Allocated address: 020103")
+        end
+        it "put book after some book is taken" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            put_book6
+            @main.input_command("take_book_from|020102")
+            @main.input_command("take_book_from|010102")
+            response = put_book7
+            expect(response).to eq("Allocated address: 010102")
+        end
+        it "put book after some book is taken" do
+            build_library
+            put_book
+            put_book2
+            put_book3
+            put_book4
+            put_book5
+            put_book6
+            @main.input_command("take_book_from|020102")
+            @main.input_command("take_book_from|010102")
+            put_book7
+            response = put_book8
+            expect(response).to eq("Allocated address: 020102")
         end
     end
     context 'take book from' do

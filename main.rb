@@ -24,3 +24,14 @@ class Main
     end
 
 end
+
+# main = Main.new
+
+# while true do
+#     user_input = gets.chomp
+#     if user_input == "end"
+#         break
+#     end
+#     puts main.input_command(user_input)
+    
+# end

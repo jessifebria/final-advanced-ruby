@@ -30,7 +30,7 @@ class TakeBook < Command
         if message != "valid"
             return message
         end
-
+        # puts "LIBRARY ", @library
         message = @library.take_book(@shelter_index, @row_index, @column_index)
         return message
     end
