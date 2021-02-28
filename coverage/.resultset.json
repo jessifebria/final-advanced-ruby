@@ -1,13 +1,33 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/jessi/advanced_final/spec/printer_spec.rb": {
+      "/home/jessi/advanced_final/spec/bookprinter_spec.rb": {
         "lines": [
           1,
-          null,
           1,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/jessi/advanced_final/printer/bookprinter.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -20,13 +40,38 @@
           1,
           null,
           1,
+          0,
+          null,
+          null,
           1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/jessi/advanced_final/book.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1614507645
+    "timestamp": 1614507989
   }
 }

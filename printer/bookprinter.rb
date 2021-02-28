@@ -1,10 +1,14 @@
 require_relative 'printer'
 require './book'
 
-def BookPrinter < Printer
+class BookPrinter < Printer
 
-    def print(book)
-        "#{book.isbn} | #{book.title} | #{book.author}"
+    def initialize(book)
+        @book = book
+    end
+
+    def print
+        "#{@book.isbn} | #{@book.title} | #{@book.author}"
     end
     
 end
