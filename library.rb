@@ -67,30 +67,20 @@ class Library
     end
     
     def find_book(isbn_from_user)
-        flag = 0
         for shelter_index in 0...@shelters.length do
             for row_index in 0...@shelters[shelter_index].length do
                 for column_index in 0...@shelters[shelter_index][row_index].length do
                     book = @shelters[shelter_index][row_index][column_index]
                     if book != 0
                         if book.is_isbn_same?(isbn_from_user)
-                            flag = 1
-                            break
+                            return shelter_index, row_index, column_index
                         end
                     end
                 end
-                if flag == 1
-                    break
-                end
-            end
-            if flag == 1
-                break
             end
         end
-        if flag == 0 
-            return -1,-1,-1
-        end
-        return shelter_index, row_index, column_index
+        
+        return -1,-1,-1
     end
 
 
