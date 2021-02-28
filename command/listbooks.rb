@@ -2,7 +2,7 @@
 require './library'
 require './book'
 require './index_to_booklocation_adapter'
-require './printer/libraryprinter'
+require './printer/printerfactory'
 
 class ListBooks
 
@@ -37,8 +37,9 @@ class ListBooks
             shelter_index+=1
         end
 
-        libraryprinter = LibraryPrinter.new
-        response = libraryprinter.print(hash_of_books)
+        
+        printer = PrinterFactory.new_printer('library')
+        response = printer.print(hash_of_books)
 
         return response
     end

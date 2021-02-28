@@ -3,7 +3,7 @@ require_relative 'bookprinter'
 
 class PrinterFactory 
 
-    def self.print(type)
+    def self.new_printer(type)
         case type
         when 'library'
             LibraryPrinter.new
