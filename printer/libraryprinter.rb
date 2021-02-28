@@ -4,15 +4,12 @@ require_relative 'bookprinter'
 
 class LibraryPrinter < Printer
 
-    def initialize(hash_of_books) 
-        @hash_of_books = hash_of_books
-    end
 
-    def print
+    def print(hash_of_books)
         response = ""
-        for book_location in @hash_of_books.keys   
-            bookprinter = BookPrinter.new(@hash_of_books[book_location])  
-            response += "#{book_location} : #{bookprinter.print}\n"
+        bookprinter = BookPrinter.new
+        for book_location in hash_of_books.keys   
+            response += "#{book_location} : #{bookprinter.print(hash_of_books[book_location]) }\n"
         end
         response
     end

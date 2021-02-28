@@ -2,6 +2,7 @@
 require './library'
 require './book'
 require './index_to_booklocation_adapter'
+require './printer/libraryprinter'
 
 class ListBooks
 
@@ -13,13 +14,15 @@ class ListBooks
         shelter_index = 0
         row_index = 0
         flag = 0
+        hash_of_books = Hash.new
         for shelter in shelters do
             for rows in shelter do
                 row_index = 0
                 column_index = 0
                 for book in rows do
                     if book != 0
-                        response += "#{adapter.convert(shelter_index,column_index, row_index)} : #{book.print_detail}\n"
+                        book_location = adapter.convert(shelter_index,column_index, row_index)
+                        hash_of_books[book_location] = book
                         column_index +=1 
                     end
                 end
@@ -34,6 +37,8 @@ class ListBooks
             shelter_index+=1
         end
 
+        libraryprinter = LibraryPrinter.new
+        response = libraryprinter.print(hash_of_books)
 
         return response
     end
